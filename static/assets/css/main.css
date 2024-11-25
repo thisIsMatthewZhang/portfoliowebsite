@@ -2006,8 +2006,8 @@ input, select, textarea {
 					-webkit-flex-shrink: 0;
 					-ms-flex-shrink: 0;
 					flex-shrink: 0;
-					width: 17em;
-					height: 100%;
+					width: 20em;
+					height: 115%;
 				}
 
 					#main > .panel.intro .pic:before {

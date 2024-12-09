@@ -11,7 +11,11 @@
 		$wrapper = $('#wrapper'),
 		$main = $('#main'),
 		$panels = $main.children('.panel'),
-		$nav = $('#nav'), $nav_links = $nav.children('a');
+		$nav = $('#nav'), 
+		$nav_links = $nav.children('a');
+
+	// Define the order of panels for sequential navigation
+    var panelOrder = ['#home', '#aboutme', '#work', '#contact'];
 
 	// Breakpoints.
 		breakpoints({
@@ -29,9 +33,27 @@
 			}, 100);
 		});
 
+
+	// Custom function to get next panel
+    function getNextPanel(currentHash) {
+        var currentIndex = panelOrder.indexOf(currentHash);
+        if (currentIndex === -1 || currentIndex === panelOrder.length - 1) {
+            // If current hash not found or is last panel, default to first
+            return panelOrder[0];
+        }
+        return panelOrder[currentIndex + 1];
+    }
+
+    // Arrow navigation
+    $('.jumplink.pic .arrow').on('click', function(event) {
+        event.preventDefault();
+        var nextPanel = getNextPanel(window.location.hash || '#home');
+        window.location.hash = nextPanel;
+    });
+
+
 	// Nav.
-		$nav_links
-			.on('click', function(event) {
+		$nav_links.on('click', function(event) {
 
 				var href = $(this).attr('href');
 
@@ -66,8 +88,7 @@
 					}
 
 				// No panel/link? Default to first.
-					if (!$panel
-					||	$panel.length == 0) {
+					if (!$panel || $panel.length == 0) {
 
 						$panel = $panels.first();
 						$link = $nav_links.first();

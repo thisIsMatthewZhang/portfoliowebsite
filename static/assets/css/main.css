@@ -2039,13 +2039,13 @@ input, select, textarea {
 						object-position: center;
 					}
 
-					#main > .panel.intro .pic .arrow {
+					#main > .panel .pic .arrow {
 						display: block;
 						position: absolute;
 						right: 0;
 						top: 50%;
 						margin-top: -1.375em;
-						width: 2.75em;
+						width: 1.75em;
 						height: 2.75em;
 						background: #000;
 						background: rgba(0, 0, 0, 0.75);
@@ -2060,18 +2060,18 @@ input, select, textarea {
 						transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 					}
 
-						#main > .panel.intro .pic .arrow:before {
+						#main > .panel .pic .arrow:before {
 							position: relative;
 							padding-right: 0;
 							top: 0.125em;
 						}
 
-						#main > .panel.intro .pic .arrow span {
+						#main > .panel .pic .arrow span {
 							display: block;
 							text-indent: -9999px;
 						}
 
-					#main > .panel.intro .pic:hover .arrow {
+					#main > .panel .pic:hover .arrow {
 						width: 3em;
 						padding-right: 0.25em;
 					}
